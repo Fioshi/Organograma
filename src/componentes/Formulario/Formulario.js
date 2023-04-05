@@ -7,7 +7,7 @@ import './Formulario.css'
 export const Formulario = (props) => {
 
     const [nome, setNome] = useState(' ')
-    const [funcao, setCargo] = useState(' ')
+    const [funcao, setFuncao] = useState(' ')
     const [imagem, setImagem] = useState(' ')
     const [time, setTime] = useState(' ')
 
@@ -20,7 +20,7 @@ export const Formulario = (props) => {
             time
         });
         setNome(" ")
-        setCargo(" ")
+        setFuncao(" ")
         setImagem("")
         setTime("")
     }
@@ -34,25 +34,24 @@ export const Formulario = (props) => {
                     aoAlterado={valor => setNome(valor)}
                     obrigatorio={true}
                     label='Nome'
-                    placeholder='Digite seu nome'
-                />
+                    placeholder='Digite seu nome'/>
                 <CampoTexto
                     valor={funcao}
-                    aoAlterado={valor => setCargo(valor)}
+                    aoAlterado={valor => setFuncao(valor)}
                     obrigatorio={true}
                     label='Função'
-                    placeholder='Digite seu cargo' />
+                    placeholder='Digite sua funcão'/>
                 <CampoTexto
                     valor = {imagem}
                     aoAlterado={valor => setImagem(valor)}
                     label='Imagem'
-                    placeholder='Informe o endereço da imagem que deseja' />
+                    placeholder='Informe o endereço da imagem que deseja'/>
                 <ListaSuspensa
                     valor = {time}
                     aoAlterado={valor => setTime(valor)}
                     obrigatorio={true}
                     label='Time'
-                    itens={props.times} />
+                    itens={props.times}/>
                 <Botao>
                     Criar Card
                 </Botao>
